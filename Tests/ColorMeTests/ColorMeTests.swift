@@ -4,10 +4,17 @@ import XCTest
 final class ColorMeTests: XCTestCase {
     
     func testRedColorEqual() {
-        XCTAssertEqual(ColorMe.colorFromHexString("FF0000"), .red)
+        let color = ColorMe.colorFromHexString("FF0000")
+        XCTAssertEqual(color, .red)
     }
 
+    func testColorsAreEqual() {
+        let color = ColorMe.colorFromHexString("006736")
+        XCTAssertEqual(color, ColorMe.themeColor)
+    }
+    
     static var allTests = [
         ("testRedColorFromEqual", testRedColorEqual),
+        ("testColorsAreEqual", testColorsAreEqual)
     ]
 }

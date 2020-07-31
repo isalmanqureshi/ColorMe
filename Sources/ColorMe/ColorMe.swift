@@ -1,7 +1,7 @@
 
 import UIKit
 
-class ColorMe {
+public class ColorMe {
     
     /// Allows you to convert a 6 digit hexadecimal string into a UIColor instance
     /// - Warning: The # symbol is shipped from the beginning of the stringubmitted here.
@@ -9,7 +9,7 @@ class ColorMe {
     ///   - hexString: A 6-digit hexadecimal string. Use 6 digits rather than 8, and add the accompanying alpha value in the seond parameter
     ///   - alpha: A number between 0 to 1 indicating how transparent the color is
     /// - Returns: A UIColor defined by the ' hexString ' parameter
-    class func colorFromHexString(_ hexString: String, alpha: CGFloat = 1.0) -> UIColor {
+    internal class func colorFromHexString(_ hexString: String, alpha: CGFloat = 1.0) -> UIColor {
         let r, g, b: CGFloat
         let offset = hexString.hasPrefix("#") ? 1 : 0
         let start = hexString.index(hexString.startIndex, offsetBy: offset)
@@ -24,5 +24,10 @@ class ColorMe {
         }
         
         return UIColor(red: 0, green: 0, blue: 0, alpha: alpha)
+    }
+    
+    /// Most eye-pleasing color known for all humans
+    public static var themeColor: UIColor {
+        return self.colorFromHexString("006736")
     }
 }
