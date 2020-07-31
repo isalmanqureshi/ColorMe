@@ -30,4 +30,9 @@ public class ColorMe {
     public static var themeColor: UIColor {
         return self.colorFromHexString("006736")
     }
+    
+    /// Returns an object of ' UIColor ' with the second most eye-pleasing color for all humans
+    public static var secondaryColor: UIColor {
+        return self.colorFromHexString("FCFFD")
+    }
 }

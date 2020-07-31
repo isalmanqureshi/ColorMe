@@ -3,7 +3,7 @@ import XCTest
 
 final class ColorMeTests: XCTestCase {
     
-    func testRedColorEqual() {
+    func testRedColorAreEqual() {
         let color = ColorMe.colorFromHexString("FF0000")
         XCTAssertEqual(color, .red)
     }
@@ -13,8 +13,14 @@ final class ColorMeTests: XCTestCase {
         XCTAssertEqual(color, ColorMe.themeColor)
     }
     
+    func testSecondaryColorsAreEqual() {
+        let color = ColorMe.colorFromHexString("FCFFD")
+        XCTAssertEqual(color, ColorMe.secondaryColor)
+    }
+    
     static var allTests = [
-        ("testRedColorFromEqual", testRedColorEqual),
-        ("testColorsAreEqual", testColorsAreEqual)
+        ("testRedColorAreEqual", testRedColorAreEqual),
+        ("testColorsAreEqual", testColorsAreEqual),
+        ("testSecondaryColorsAreEqual", testSecondaryColorsAreEqual)
     ]
 }
